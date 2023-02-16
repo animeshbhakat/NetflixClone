@@ -11,9 +11,9 @@ const Row = ({title, fetchUrl, isLargeRow}) => {
     useEffect(() => {
         async function fetchData() {
             try{
-            const request = await axios.get(fetchUrl);
-            setMovies(request.data.results);
-            return request;
+                const request = await axios.get(fetchUrl);
+                setMovies(request.data.results);
+                return request;
             }
             catch(error){
                 console.log(error);
@@ -22,7 +22,7 @@ const Row = ({title, fetchUrl, isLargeRow}) => {
         fetchData();
     }, [fetchUrl]);
 
-    console.table(movies);
+    // console.table(movies);
 
     return (
         <div className="row">
